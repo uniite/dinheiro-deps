@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "dinheiro"
+exit 0

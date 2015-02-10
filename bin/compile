@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -e
+
+mkdir -p "$1" "$2"
+BUILD_PATH=$(cd "$1/" && pwd)
+CACHE_PATH=$(cd "$2/" && pwd)
+
+dpkg -i *.deb
+
+
+# Grab the libs
+echo -n "-----> Installing pandas (0.15.2)... "
+dpkg -i deb/*.deb
+echo "done"
