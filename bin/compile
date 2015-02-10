@@ -6,10 +6,13 @@ mkdir -p "$1" "$2"
 BUILD_PATH=$(cd "$1/" && pwd)
 CACHE_PATH=$(cd "$2/" && pwd)
 
-dpkg -i *.deb
 
-
-# Grab the libs
+PANDAS_VERSION=0.15.2
 echo -n "-----> Installing pandas (0.15.2)... "
-dpkg -i deb/*.deb
+tar xf python-pandas-$PANDAS_VERSION.tar.gz
+echo "done"
+
+NUMPY_VERSION=1.9.1
+echo -n "-----> Installing numpy (1.9.1)... "
+tar xf python-numpy-$NUMPY_VERSION.tar.gz
 echo "done"
